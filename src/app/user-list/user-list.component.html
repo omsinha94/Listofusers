@@ -1,0 +1,11 @@
+<div class="user-list" [ngClass]="{'visibility':visible}">
+    <div class="heading">
+        <h1 class="user-list-heading">List of Users</h1>
+        <button class="btn btn-primary float-right add-user" routerLink="/add_edit_user">Add User</button>
+    </div>
+    <div class="row">
+        <div class="cards col-sm-4" *ngFor="let user of userList">
+            <app-card [user]="user" (editUserData)="editUser($event)"></app-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+@import './../../../variable.scss';
+
+.card{
+    height: 100%;
+    .card-body{
+        box-shadow: 0px 0px 15px 0px $light-color;
+        .link{
+            text-decoration: none;
+        }
+    }
+}

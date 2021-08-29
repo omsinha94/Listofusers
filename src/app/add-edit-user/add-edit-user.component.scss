@@ -1,0 +1,56 @@
+
+@import './../../variable.scss';
+
+.main-wrapper{
+    width           : 40%;
+    margin          : 36px auto 0;
+    padding         : $spacing-lg*2;
+    opacity         : 0;
+    border-radius   : 4px;
+    @include bordered(1px, $light-color);
+    @include boxShadow(0px, 0px, 6px, 2px, $light-color);
+    transition: 1s all;
+    &.visibility{
+        opacity: 1;
+    }
+    .form-wrapper{
+        .form-group{
+            margin-bottom: 35px;
+            .form-input{
+                position: relative;
+                .error{
+                    left            : 0;
+                    width           : 100%;
+                    color           : $error;
+                    padding         : $spacing-xs;
+                    z-index         : 9;
+                    position        : absolute;
+                    background      : $error-background;
+                    border-radius   : 3px 3px 0px 0px;
+                    @include bordered(1px, $error-background);
+                    @include boxShadow(0px, 1px, 7px, 0px, $error-box-shadow);
+                }
+            }
+        }
+        .form-action{
+            display         : flex;
+            justify-content : space-between;
+        }
+    }
+}
+
+@media screen and (max-width: $mob-screen){
+    .main-wrapper{
+        width       : 95%;
+        padding     : $spacing-md;
+        margin-top  : $spacing-sm;
+        .form-wrapper{
+            .form-action{
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+

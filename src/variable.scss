@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+// spacing variables
+$spacing-xs :4px;
+$spacing-sm :8px;
+$spacing-md :12px;
+$spacing-lg :16px;
+
+// color codes
+$red        :#da4a4a;
+$green      :#005600;
+$white      :#ffffff;
+$light-color:#cccccc;
+$page-background-color:#f8f8f8;
+
+//error colors
+$error              :#a94442;
+$error-background   :#f2dede;
+$error-box-shadow   :#928282;
+
+// responsive screens variables
+$mob-screen : 480px;
+$tab-screen : 767px;
+
+//mixins
+@mixin bordered($width, $color) {
+    border: $width solid $color;
+}
+@mixin boxShadow($x, $y, $z, $blur, $color) {
+    box-shadow          : $x $y $z $blur $color;
+    -moz-box-shadow     : $x $y $z $blur $color;
+    -webkit-box-shadow  : $x $y $z $blur $color;
+}

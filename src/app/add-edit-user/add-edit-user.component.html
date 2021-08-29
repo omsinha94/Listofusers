@@ -1,0 +1,60 @@
+<div class="main-wrapper" [ngClass]="{'visibility':visible}">
+    <h1 class="text-center">{{editUser?'Edit':'Create'}} User</h1>
+    <form class="form-wrapper" #form="ngForm" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="name" id="name-label">Name</label>
+            <div class="form-input">
+                <input type="text" autocomplete="off" class="form-control" id="name" aria-describedby="nameHelp" name="name"
+                [(ngModel)]="userForm.name" #name="ngModel" placeholder="Enter Name" required>
+                <div class="error" *ngIf="(name.errors && name.touched)">
+                    <div *ngIf="name.errors.required">
+                        Name is Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" id="email-label">Email</label>
+            <div class="form-input">
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email"
+                    [(ngModel)]="userForm.email" #email="ngModel" placeholder="Enter email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                <div class="error" *ngIf="(email.errors && email.touched)">
+                    <div *ngIf="email.errors.required">
+                        Email is Required.
+                    </div>
+                    <div *ngIf="email.errors.pattern">
+                        Email is invalid.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone" id="phone-label">Phone</label>
+            <div class="form-input">
+                <input type="text" class="form-control" id="phone" placeholder="Phone" name="phone"
+                [(ngModel)]="userForm.phone" #phone="ngModel" required>
+                <div class="error" *ngIf="(phone.errors && phone.touched)">
+                    <div *ngIf="phone.errors.required">
+                        Phone is Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="website" id="password-label">Website</label>
+            <div class="form-input">
+                <input type="text" class="form-control" id="website" placeholder="Website" name="website"
+                [(ngModel)]="userForm.website" #website="ngModel" required>
+                <div class="error" *ngIf="(website.errors && website.touched)">
+                    <div *ngIf="website.errors.required">
+                        Website is Required
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-action">
+            <button type="button" class="btn btn-secondary" routerLink="/user_list">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+@import './../../variable.scss';
+
+.user-list {
+    width       : 80%;
+    margin      : auto;
+    opacity     : 0;
+    transition  : 1s all;
+    &.visibility {
+        opacity: 1;
+    }
+    .heading {
+        display         : flex;
+        margin          : 25px 0;
+        justify-content : space-between;
+        .add-user{
+            margin: 8px 0;
+        }
+    }
+    .cards {
+        display         : inline-block;
+        margin-bottom   : 25px;
+    }
+}
