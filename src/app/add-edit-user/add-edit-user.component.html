@@ -54,7 +54,8 @@
         </div>
         <div class="form-action">
             <button type="button" class="btn btn-secondary" routerLink="/user_list">Cancel</button>
-            <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+            <button type="submit" class="btn btn-primary" *ngIf="!editUser" [disabled]="form.invalid">Submit</button>
+            <button type="button" class="btn btn-primary" *ngIf="editUser" [disabled]="form.invalid" (click)="save()">Save</button>
         </div>
     </form>
 </div>

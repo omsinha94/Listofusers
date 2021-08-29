@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 })
 export class DataService {
 
-  userData:any;
+  userData: any;
   constructor(private http: HttpClient) { }
 
   getUser() {
@@ -18,6 +18,12 @@ export class DataService {
 
   createUser(data) {
     return this.http.post("https://jsonplaceholder.typicode.com/posts", data).pipe(map((res: Response) => {
+      return res;
+    }));
+  }
+
+  updateUser(userId, data) {
+    return this.http.put("https://jsonplaceholder.typicode.com/posts/" + userId, data).pipe(map((res: Response) => {
       return res;
     }));
   }
